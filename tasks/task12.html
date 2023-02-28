@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Задача 12</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2>Задача 12.</h2>
+      <p>
+        Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у
+        кожній позиції вибирається як одне з чотирьох зображень. Вивести ці
+        зображення і повідомити виграш користувача (три перших зображення 100
+        грн, три других – 200, три третіх – 500, три четвертих зображення –
+        1000грн). Використати цикли і switch (для вибору зображення за номером).
+      </p>
+    </div>
+    <script>
+      const imgNumber = 4;
+      let counterImg1 = 0,
+        counterImg2 = 0,
+        counterImg3 = 0,
+        counterImg4 = 0,
+        counterScore = 0;
+
+      for (let i = 0; i < 3; i++) {
+        let randomImgNumber = 1 + Math.floor(Math.random() * imgNumber);
+        document.write(
+          `<div class="img"><img src="../img/img${randomImgNumber}.png"></div>`
+        );
+        switch (randomImgNumber) {
+          case 1:
+            counterImg1++;
+            break;
+          case 2:
+            counterImg2++;
+            break;
+          case 3:
+            counterImg3++;
+            break;
+          case 4:
+            counterImg4++;
+            break;
+          default:
+            break;
+        }
+      }
+      if (counterImg1 === 3) counterScore = 100;
+      else if (counterImg2 === 3) counterScore = 200;
+      else if (counterImg3 === 3) counterScore = 500;
+      else if (counterImg4 === 3) counterScore = 1000;
+      else counterScore = 0;
+      document.write(`<h3>Ваш виграш ${counterScore} грн. </h3>`);
+    </script>
+  </body>
+</html>

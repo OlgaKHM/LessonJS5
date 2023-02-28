@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Задача 1</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2>Задача 1.</h2>
+      <p>
+        Вивести з використанням циклів маркований список з випадковими числами
+        (1-100). Кількість випадкових чисел вводиться користувачем.
+      </p>
+    </div>
+    <script>
+      //ввести данні
+      const userRandomNumber = parseInt(
+        prompt("Введіть кількість випадкових чисел", "1")
+      );
+      const minNamber = 1;
+      const maxNamber = 100;
+
+      //знаходимо результат
+      document.write(`<ul>`);
+      for (let i = 0; i < userRandomNumber; i++) {
+        const randomNumber = minNamber + Math.floor(Math.random() * maxNamber);
+        document.write(`<li>${randomNumber}</li>`);
+      }
+      document.write(`</ul>`);
+    </script>
+  </body>
+</html>

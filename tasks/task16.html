@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Задача 16</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2>Задача 16.</h2>
+      <p>
+        Користувач поступово вводить прибуток магазину за кожен день протягом N
+        тижнів. Знайти загальну величину прибутку та вивести величину прибутку
+        протягом кожного окремого тижня.
+      </p>
+    </div>
+    <script>
+      const userNumberWeeks = parseInt(prompt("Введіть кількість тижнів", "1"));
+      let weeklyProfit = 0;
+      let totalProfit = 0;
+
+      document.write(`<table><tbody>`);
+      for (let i = 1; i <= userNumberWeeks; i++) {
+        for (let j = 1; j <= 7; j++) {
+          let dayProfit = parseFloat(
+            prompt(`Введіть прибуток магазину за ${j} день ${i} тижня `, "")
+          );
+          weeklyProfit += dayProfit;
+        }
+        document.write(
+          `<tr><td>Величина прибутку ${i} тижня</td><td> ${weeklyProfit} грн.</td>`
+        );
+        totalProfit += weeklyProfit;
+        weeklyProfit = 0;
+      }
+      document.write(
+        `<tr><td>Загальний прибуток</td><td> ${totalProfit} грн.</td>`
+      );
+      document.write(`</tbody></table> `);
+    </script>
+  </body>
+</html>

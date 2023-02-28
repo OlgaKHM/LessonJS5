@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Задача 7</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2>Задача 7.</h2>
+      <p>Вивести на екран N абзаців (N вводиться користувачем) за зразком.</p>
+    </div>
+
+    <script>
+      //ввести данні
+      const userNumber = parseInt(prompt("Введіть кількість абзаців", "1"));
+      for (let i = 1; i <= userNumber; i++) {
+        document.write(`<h3>Заголовок ${i}</h3>`);
+        for (j = 1; j <= i; j++) {
+          document.write(
+            `<p class="tekst"> Розділ ${j}, параграф ${j}</p><br>`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

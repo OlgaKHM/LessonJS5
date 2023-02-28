@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Задача 9</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2>Задача 9.</h2>
+      <p>
+        Користувач загадує число. Комп’ютер задає питання поки не вгадає число
+        користувача (використати confirm).
+      </p>
+    </div>
+    <script>
+      const userNumber = parseInt(prompt("Загадайте число від 1 до 10", "1"));
+      let compNumber;
+      let userResponse;
+
+      do {
+        compNumber = 1 + Math.floor(Math.random() * 10);
+        userResponse = confirm(`Ви загадали число ${compNumber}?`);
+      } while (userResponse == false);
+      {
+        document.write(`<span>Ви загадали число ${compNumber} </span>`);
+      }
+    </script>
+  </body>
+</html>

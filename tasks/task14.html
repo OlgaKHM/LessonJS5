@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Задача 14</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2>Задача 14.</h2>
+      <p>
+        Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач
+        поступово вводить суму грошей до тих пір, поки суми не буде достатньо
+        для оплати товарів (кожного разу користувачу повідомляють, яку ще суму
+        потрібно ввести).
+      </p>
+    </div>
+    <script>
+      let amountPaidBuyer;
+      const amountPayableMin = 100;
+      const amountPayableMax = 1000;
+      const amountPayable =
+        amountPayableMin +
+        Math.floor(Math.random() * (amountPayableMax - amountPayableMin));
+      alert(`Сума до сплати ${amountPayable} грн.`);
+      let amountInvoice = amountPayable;
+      do {
+        amountPaidBuyer = parseFloat(
+          prompt(`Введіть суму грошей для оплати товарів`, "")
+        );
+        amountInvoice -= amountPaidBuyer;
+        if (amountInvoice > 0)
+          alert(`Вам потрібно доплатити ${amountInvoice} грн.`);
+        else if (amountInvoice < 0)
+          alert(`Ваша решта складае ${Math.abs(amountInvoice)} грн.`);
+        else alert(`Дякуємо за покупку!`);
+      } while (amountInvoice > 0);
+      document.write(`<h3>Дякуємо за покупку!</h3>`);
+    </script>
+  </body>
+</html>
